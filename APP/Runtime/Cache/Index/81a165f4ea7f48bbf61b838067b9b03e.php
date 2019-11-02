@@ -128,7 +128,7 @@
 						<span style="width: 35%">截止时间</span>
 					</div>
 					<ul class="Putflist">
-					<?php if(is_array($list)): $i = 0; $__LIST__ = $list;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><li><span style="width: 10%"><?php echo ($vo["id"]); ?></span><span><?php echo ($vo["username"]); ?></span><span><?php echo ($vo["costt"]); ?></span><span style="width: 35%"><?php echo ($vo["update_cost"]); ?></span></li><?php endforeach; endif; else: echo "" ;endif; ?>
+					<?php if(is_array($list4)): $i = 0; $__LIST__ = $list4;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><li><span style="width: 13%"><?php echo ($vo["id"]); ?></span><span><?php echo ($vo["username"]); ?></span><span><?php echo ($vo["costt"]); ?></span><span style="width: 35%"><?php echo ($vo["update_cost"]); ?></span></li><?php endforeach; endif; else: echo "" ;endif; ?>
 					</ul>
 				</div>
 				</div>

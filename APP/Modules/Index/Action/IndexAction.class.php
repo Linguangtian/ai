@@ -144,13 +144,13 @@
 
             $minfo = M('member')->where(array('username'=>$username))->find();
             //成员的业绩=总花销=团队花销=total_cost   计算统计的时间update_cost
-			$list = $member->where(array('parent'=>$username))->field('username,id,money,truename,(total_cost+cost_money) as costt ,update_cost')->select();
+			$list = $member->where(array('parent'=>$username))->field('username,id,money,truename,update_cost,cost_money,total_cost')->select();
 			foreach($list as $key=>&$v){
                 $sql='select sum(adds) as royalty_one  from ds_jinbidetail where member='.$username.' and type=3 and tgaward='.$v['username'];
                 $res=$db->query($sql);
                 $royalty_one=$res['0']['royalty_one'];
                 $v['royalty_one']=$royalty_one>0?$royalty_one:0;
-                $v['update_cost']=date('Y-m-d H:i:s',$v['update_cost']);
+                $v['update_cost']= $v['update_cost']?date('Y-m-d H:i:s',$v['update_cost']):date('Y-m-d H:i:s',time());
 
 
                 $son= M('member') -> where(array('parent' => $v['username'])) ->field('username,id,money,truename') -> select();
@@ -196,6 +196,17 @@
 			$this->assign('isteam',$is_team);
 
 			$this->assign('list1',$list1);
+            $list4=array();
+
+			foreach ($list as $item){
+			    if($item['cost_money']>0||$item['total_cost']>0){
+                    $item['costt']=$item['cost_money']+$item['total_cost'];
+                    $list4[]=$item;
+                }
+
+            }
+
+			$this->assign('list4',$list4);
 			$this->display();
 		}
 		//推广码

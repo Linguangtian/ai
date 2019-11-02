@@ -37,15 +37,14 @@
            foreach ($member_list as $key=>$li){
 
                $count_cost=$this->count_cost($li['id']);
-               if($count_cost>0){
-                   $sql='update ds_member set update_cost='.time().',total_cost='.$count_cost.' where id='.$li['id'];
-                   $db-> query($sql);
-               }
+                $sql='update ds_member set update_cost='.time().',total_cost='.$count_cost.' where id='.$li['id'];
+                $db-> query($sql);
+
 
 
                if($li['parentcount']<direct_line) continue;
                $todate=date('Y-m-d');
-               if($li['total_cost']>=team_cost){
+               if($li['total_cost']>=team_cost&&1==0){
                    $sql='select username from ds_member where parent_id='.$li['id'];
                    $son_list=$db-> query($sql);
                     if($son_list){
@@ -71,19 +70,6 @@
                             }
                         }
                     }
-               } else{
-                   //统计最新团队收益
-               /*    $count_cost=$this->count_cost($li['id']);
-
-
-                   if($count_cost>0){
-
-                       $sql='update ds_member set update_cost='.time().',total_cost='.$count_cost.' where id='.$li['id'];
-
-                        $db-> query($sql);
-                   }*/
-
-
                }
 
            }
