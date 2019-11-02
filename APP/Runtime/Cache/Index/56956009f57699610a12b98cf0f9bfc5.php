@@ -1,0 +1,147 @@
+<?php if (!defined('THINK_PATH')) exit();?><!doctype html>
+<html>
+<head design-width="750">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <title>余额明细</title>
+    <link rel="stylesheet" href="/Public/wx/lib/weui.min.css">
+    <link rel="stylesheet" href="/Public/wx/css/jquery-weui.css">
+    <link rel="stylesheet" href="/Public/wx/css/reset.css">
+    <link rel="stylesheet" href="/Public/wx/css/box-flex.css">
+    <link rel="stylesheet" href="/Public/wx/css/style.css">
+
+    <link rel="stylesheet" href="/Public/wx/ye/css/style.css"/>
+    <link rel="stylesheet" href="/Public/wx/ye/css/data.css"/>
+    <link href="/Public/wx/ye/css/iconfont/Rjdaoico.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
+    <script type="text/javascript" src="/Public/wx/ye/js/slider.js"></script>
+    <!--下拉动画-->
+    <link rel="stylesheet" href="/Public/wx/ye/css/animate.min.css"/>
+    <script type="text/javascript" src="/Public/wx/ye/js/wow.min.js"></script>
+    <script>
+        if (!(/msie [6|7|8|9]/i.test(navigator.userAgent))){
+            new WOW().init();
+        };
+        $(function(){
+
+        });
+    </script>
+    <!--下拉动画-->
+    <script type="text/javascript">
+        function timer(opj){
+            $(opj).find('ul').animate({
+                marginTop : "-3.0rem"
+            },500,function(){
+                $(this).css({marginTop : "0.0rem"}).find("a:first").appendTo(this);
+            })
+        }
+        $(function(){
+            var num = $('.notice_active').find('a').length;
+            if(num > 1){
+                var time=setInterval('timer(".notice_active")',3500);
+                $('.gg_more a').mousemove(function(){
+                    clearInterval(time);
+                }).mouseout(function(){
+                    time = setInterval('timer(".notice_active")',3500);
+                });
+            }
+
+            $(".news_ck").click(function(){
+                location.href = $(".notice_active .notice_active_ch").children(":input").val();
+            })
+        });
+    </script>
+
+
+    <script src="/Public/wx/lib/jquery-2.1.4.js"></script>
+    <script src="/Public/wx/js/adaptive.js" type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript">
+        adaPtive(); //铺页面调用
+        //页面加载时调用
+        $(function() { direction(); });
+        //用户变化屏幕方向时调用
+        $(window).on('orientationchange', function(e) { direction(); });
+        //调用adaptive
+        function adaPtive(max) { window['adaptive'].desinWidth = 720;
+            window['adaptive'].baseFont = 24;
+            window['adaptive'].scaleType = 1;
+            window['adaptive'].maxWidth = max;
+            window['adaptive'].init(); }
+        //判断手机屏幕方向
+        function direction() { if (window.orientation == 90 || window.orientation == -90) { adaPtive(320); return false; } else if (window.orientation == 0 || window.orientation == 180) { adaPtive(); return false; } }
+    </script>
+</head>
+<body ontouchstart>
+<div class="wx-header clearfix flex">
+    <div class="wx-header-left">
+        <a href="javascript:history.go(-1);">
+            <i class="iconfont icon-zuo"></i>
+        </a>
+    </div>
+    <h1 class="flex-1">余额明细</h1>
+</div>
+
+
+<div class="datamain">
+    <div class="h-height"></div>
+    <!---头部 结束 --->
+
+    <!---数据转盘 开始--->
+    <div class="data-turntable wow zoomIn">
+        <div class="Mod xzleft">
+            <div class="Mod1"></div>
+            <div class="Mod2 xzleft"></div>
+            <div class="Mod3"></div>
+            <div class="Mod4 xzleft"></div>
+            <div class="text">当前余额</div>
+            <div class="num" id="sx2"><?php echo ($money); ?></div>
+        </div>
+    </div>
+
+
+    <div class="data-juan-list">
+        <?php if(is_array($list)): foreach($list as $key=>$v): ?><a class="item-name">
+                <div class="coml wow slideInRight">
+                    <span><?php echo (date('Y-m-d',$v["addtime"])); ?></span>
+                    <dl><?php echo ($v["desc"]); ?></dl>
+                </div>
+                <div class="comr">
+                    <span class="wow slideInLeft">￥<?php if($v["adds"] == 0.00): ?>-<?php echo (four_number($v["reduce"])); else: ?>+<?php echo (four_number($v["adds"])); endif; ?></span>
+                </div>
+            </a><?php endforeach; endif; ?>
+    </div>
+</div>
+
+
+</body>
+
+<script type="text/javascript">
+    $('.inform-list ul li').click(function(){
+        var n=$(this).index();
+        $(this).addClass('acti').siblings().removeClass('acti');
+        $('.inform-text').fadeOut();
+        $('.inform-text').eq(n).fadeIn();
+    })
+</script>
+
+<script>
+//子页返回逻辑
+   document.addEventListener('plusready', function() {
+    var webview = plus.webview.currentWebview();
+    plus.key.addEventListener('backbutton', function() {
+        webview.canBack(function(e) {
+            if(e.canBack) {
+                webview.back();
+            } else {
+                webview.close(); //hide,quit
+                //plus.runtime.quit();
+            }
+        })
+    });
+});
+</script>
+
+</html>

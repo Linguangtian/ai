@@ -1,0 +1,533 @@
+@charset "UTF-8";
+* {
+  margin: 0;
+  outline: 0;
+  padding: 0; }
+
+body {
+  background: #fff;
+  font-family: "PingFang SC Medium","Microsoft Yahei";
+  font-size: 1rem;
+  margin: 0;
+  padding: 0; }
+
+body, form, ul, ol, li, p, h1, h2, h3, h4, h5, h6, dl, dt, dd, table, fieldset, hr, div {
+  margin: 0;
+  padding: 0; }
+
+img {
+  border: 0 none;
+  max-width: 100%; }
+
+ul, ol, li {
+  list-style-type: none; }
+
+:focus {
+  outline: none; }
+
+a {
+  color: #222;
+  outline: medium none;
+  text-decoration: none; }
+
+a:hover {
+  text-decoration: none;
+  border: none; }
+
+em, i {
+  font-style: normal; }
+
+input {
+  padding: 0; }
+
+input[type="button"], input[type="submit"], input[type="reset"] {
+  -webkit-appearance: none; }
+
+input[type="text"]:disabled {
+  background-color: #fff;
+  opacity: 1; }
+
+/*-----------------手机端去掉点击时默认边框--------------------*/
+*:focus {
+  outline: none; }
+
+* {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-appearance: none;
+  border: 0; }
+
+/*-----------------字体粗细--------------------*/
+.fw-bold {
+  font-weight: bold; }
+
+.fw-normal {
+  font-weight: normal; }
+
+/*-----------------浮动定位--------------------*/
+.fl {
+  float: left; }
+
+.fr {
+  float: right; }
+
+.pr {
+  position: relative; }
+
+.pa {
+  position: absolute; }
+
+/*-----------------背景颜色--------------------*/
+.bg-fff {
+  background: #fff !important; }
+
+.bg-ff6969 {
+  background: #ff6969; }
+
+.bg-f7f7f7 {
+  background: #f7f7f7; }
+
+/*-----------------转换元素--------------------*/
+.dis-n {
+  display: none; }
+
+.dis-b {
+  display: block; }
+
+.dis-i {
+  display: inline; }
+
+/*-----------------宽高--------------------*/
+.wb100 {
+  width: 100%; }
+
+.hb100 {
+  height: 100%; }
+
+/***
+ * 自适应换算单位说明
+ * 32和js自适应部分的32是对齐的
+ * 这个值只是方便计算作为参考标准
+ * */
+/*编辑地址*/
+.apply-shop {
+  padding: 0.78125rem; }
+
+.apply-shop input:not([type]):disabled {
+  background: #fff; }
+
+.apply-shop .li {
+  line-height: 3.28125rem;
+  overflow: hidden;
+  border-bottom: 1px solid #e1e1e1; }
+
+.apply-shop .li.bor-green {
+  border-color: #9dc233; }
+
+.apply-shop .li.bor-red {
+  border-color: #d61b12; }
+
+.apply-shop .li span {
+  width: 5.15625rem;
+  font-size: 1.03125rem;
+  color: #999; }
+
+.apply-shop .li input {
+  width: 16.5625rem;
+  height: 3.21875rem;
+  line-height: 3.21875rem;
+  min-height: 3.21875rem;
+  font-size: 1.03125rem;
+  color: #1a1a1a; }
+
+.apply-shop .mobile {
+  overflow: hidden; }
+
+.apply-shop .mobile .btn {
+  width: 5.9375rem;
+  height: 2.5rem;
+  line-height: 2.5rem;
+  padding: 0;
+  margin-top: 0.9375rem;
+  background: #f2f2f2;
+  font-size: 0.8125rem;
+  color: #808080;
+  border-radius: 0.09375rem; }
+
+.apply-shop .mobile .li {
+  width: 14.84375rem; }
+
+.apply-shop .mobile .li input {
+  width: 9.6875rem; }
+
+.apply-shop .school {
+  overflow: hidden; }
+
+.apply-shop .school img {
+  width: 0.5rem;
+  height: 0.8125rem;
+  margin-top: 1.25rem; }
+
+.apply-shop .school .li input {
+  width: 15rem; }
+
+.apply-shop textarea {
+  width: 15.78125rem;
+  height: 7.03125rem;
+  line-height: 0.78125rem;
+  border-radius: 0.09375rem;
+  background: #f2f2f2;
+  font-size: 0.78125rem;
+  font-family: "微软雅黑"; }
+
+.apply-shop .supplement {
+  padding: 1.25rem 0; }
+
+.apply-shop .txt {
+  padding: 0.9375rem 0 4.21875rem 0;
+  font-size: 0.8125rem;
+  color: #999; }
+
+.apply-shop .save {
+  width: 15.625rem;
+  height: 3.125rem;
+  display: block;
+  line-height: 3.125rem;
+  margin-top: 4.21875rem;
+  padding: 0;
+  background: #d61b12;
+  font-size: 1.125rem;
+  color: #fff;
+  border-radius: 1.40625rem;
+  margin-left: auto;
+  margin-right: auto; }
+
+/*申请开店*/
+.apply-shop {
+  padding: 0.78125rem; }
+
+.apply-shop .li {
+  line-height: 3.28125rem;
+  overflow: hidden;
+  border-bottom: 0.03125rem solid #e1e1e1; }
+
+.apply-shop .li.bor-green {
+  border-color: #9dc233; }
+
+.apply-shop .li.bor-red {
+  border-color: #d61b12; }
+
+.apply-shop .li span {
+  width: 5.15625rem;
+  font-size: 1.03125rem;
+  color: #999; }
+
+.apply-shop .li input {
+  width: 16.5625rem;
+  height: 3.28125rem;
+  line-height: 3.28125rem;
+  min-height: 3.28125rem;
+  font-size: 1.03125rem;
+  color: #1a1a1a; }
+
+.apply-shop .mobile {
+  overflow: hidden; }
+
+.apply-shop .mobile .btn {
+  width: 5.9375rem;
+  height: 2.5rem;
+  line-height: 2.5rem;
+  padding: 0;
+  margin-top: 0.9375rem;
+  background: #f2f2f2;
+  font-size: 0.8125rem;
+  color: #808080;
+  border-radius: 0.09375rem; }
+
+.apply-shop .mobile .li {
+  width: 14.84375rem; }
+
+.apply-shop .mobile .li input {
+  width: 9.6875rem; }
+
+.apply-shop .school {
+  overflow: hidden; }
+
+.apply-shop .school image {
+  width: 0.5rem;
+  height: 0.8125rem;
+  margin-top: 1.25rem; }
+
+.apply-shop .school .li input {
+  width: 15rem; }
+
+.apply-shop textarea {
+  width: 15.78125rem;
+  height: 7.03125rem;
+  line-height: 0.78125rem;
+  border-radius: 0.09375rem;
+  background: #f2f2f2; }
+
+.apply-shop .supplement {
+  padding: 1.25rem 0; }
+
+.apply-shop .txt {
+  padding: 0.9375rem 0 4.21875rem 0;
+  font-size: 0.8125rem;
+  color: #999; }
+
+.apply-shop .save {
+  width: 15.625rem;
+  height: 3.125rem;
+  line-height: 3.125rem;
+  padding: 0;
+  background: #d61b12;
+  font-size: 1.125rem;
+  color: #fff;
+  border-radius: 1.40625rem; }
+
+.layui-m-layer-msg .layui-m-layercont {
+  padding: 0.625rem 0.625rem !important; }
+
+.layui-m-layerchild {
+  font-size: 0.875rem !important; }
+
+/*2018-12-02 开始*/
+.register-content .con {
+  width: 16.09375rem;
+  margin: 0 auto; }
+
+.register-content .apply-shop .li input {
+  width: 100% !important;
+  height: 3.40625rem !important;
+  line-height: 3.40625rem !important;
+  min-height: 3.40625rem !important; }
+
+.register-content .apply-shop .li {
+  border-bottom: 0.03125rem solid #e8e8e8; }
+
+.register-content .apply-shop .li input.w329 {
+  width: 64% !important; }
+
+.register-content .code {
+  width: calc(  36% - 0.0625rem );
+  height: 1.5625rem;
+  margin-top: 0.9375rem;
+  line-height: 1.5625rem;
+  text-align: center;
+  color: #FF2821;
+  font-size: 0.875rem;
+  border-left: 0.0625rem solid #a9a9a9; }
+
+.register-content .agreement {
+  font-size: 0.75rem;
+  padding-top: 1.46875rem; }
+
+.register-content input[type='checkbox'], .register-content input[type='radio'] {
+  visibility: hidden;
+  cursor: pointer; }
+
+.register-content input[type='radio'] + label, .register-content input[type='checkbox'] + label {
+  float: left;
+  width: 0.75rem;
+  height: 0.75rem;
+  margin-top: 0.09375rem;
+  background: url(../images/ico_order_con.jpg) no-repeat;
+  background-size: cover; }
+
+.register-content input[type='radio']:checked + label, .register-content input[type='checkbox']:checked + label {
+  float: left;
+  width: 0.75rem;
+  height: 0.75rem;
+  margin-top: 0.09375rem;
+  background: url(../images/register_ico1.png) no-repeat;
+  background-size: cover; }
+
+.register-content .apply-shop .save {
+  width: 16.03125rem;
+  height: 2.75rem;
+  line-height: 2.75rem;
+  background: #fff;
+  border: 0.03125rem solid #ff6836;
+  color: #FF2821;
+  font-size: 1.125rem; }
+
+.register-content .c-red {
+  color: #FF2821; }
+
+.register-content .button {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  border-top: 0.03125rem solid #f2f2f2;
+  background: #fff;
+  height: 3.03125rem;
+  line-height: 3.03125rem;
+  font-size: 0.875rem; }
+
+.register-content .button .mid {
+  margin-left: 0.625rem; }
+
+.register-content .button .left img {
+  width: 3.03125rem;
+  height: 3.03125rem; }
+
+.register-content .button .right {
+  width: 6.875rem;
+  height: 3.03125rem;
+  line-height: 3.03125rem;
+  background: url(../images/register_bg2.png) no-repeat;
+  text-align: center;
+  color: #fff;
+  background-size: cover; }
+
+.register-content .button .right a {
+  color: #fff;
+  display: block; }
+
+.register-content .apply-shop .li input {
+  font-size: 0.875rem; }
+
+.register-content input::-webkit-input-placeholder {
+  /* WebKit, Blink, Edge */
+  color: #8E8E8E;
+  font-size: 0.875rem; }
+
+.register-content .banner img {
+  width: 100%; }
+
+.register-content input:-moz-placeholder {
+  /* Mozilla Firefox 4 to 18 */
+  color: #8E8E8E;
+  font-size: 0.875rem; }
+
+.register-content input::-moz-placeholder {
+  /* Mozilla Firefox 19+ */
+  color: #8E8E8E;
+  font-size: 0.875rem; }
+
+.register-content input:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: #8E8E8E;
+  font-size: 0.875rem; }
+
+.download-content div {
+  text-align: center;
+  padding-top: 5rem;
+  padding-bottom: 5.3125rem; }
+
+.download-content div img {
+  width: 7.4375rem;
+  height: 7.4375rem; }
+
+.download-content .save {
+  width: 16.03125rem;
+  height: 2.75rem;
+  line-height: 2.75rem;
+  background: #fff;
+  border: 0.03125rem solid #0075c2;
+  color: #0075c2;
+  font-size: 1.125rem;
+  border-radius: 1.375rem;
+  margin: 0 auto;
+  display: block;
+  margin-bottom: 1.875rem; }
+
+.register-seccess .con {
+  width: 20.375rem;
+  height: 9.53125rem;
+  line-height: 9.53125rem;
+  text-align: center;
+  font-size: 1.125rem;
+  color: #2D2D2D; }
+
+.register-seccess .btn {
+  width: 20.375rem;
+  height: 2.75rem;
+  line-height: 2.75rem;
+  color: #fff;
+  text-align: center;
+  font-size: 0.9375rem;
+  background: url(../images/register_bg2.png) repeat-x; }
+
+.register-seccess .btn a {
+  color: #fff;
+  display: block; }
+
+.register-recom {
+  width: 20.375rem; }
+
+.register-recom .hd {
+  height: 3.6875rem;
+  line-height: 3.6875rem;
+  font-size: 1.125rem;
+  color: #2D2D2D;
+  text-align: center;
+  border-bottom: 0.03125rem solid #eeeeee; }
+
+.register-recom .img {
+  text-align: center;
+  padding: 1.25rem 0 0.9375rem 0; }
+
+.register-recom .img img {
+  width: 3.75rem;
+  height: 3.75rem;
+  border-radius: 50%; }
+
+.register-recom .tit {
+  font-size: 0.875rem;
+  color: #2D2D2D;
+  padding-bottom: 1.5625rem;
+  text-align: center; }
+
+.register-recom .invitation {
+  font-size: 0.875rem;
+  color: #FF2821;
+  padding-bottom: 3.59375rem;
+  text-align: center; }
+
+.register-recom .button div {
+  float: left; }
+
+.register-recom .button div:first-child {
+  width: 50%;
+  height: 2.6875rem;
+  line-height: 2.6875rem;
+  text-align: center;
+  font-size: 0.9375rem;
+  color: #2D2D2D;
+  border-top: 1px solid #d2d2d2; }
+
+.register-recom .button div:last-child {
+  width: 50%;
+  height: 2.71875rem;
+  line-height: 2.71875rem;
+  text-align: center;
+  font-size: 0.9375rem;
+  color: #fff;
+  background: url(../images/register_bg2.png) repeat-x;
+  background-size: cover; }
+
+.binding-content div {
+  text-align: center;
+  padding-top: 4.21875rem;
+  padding-bottom: 3.75rem; }
+
+.binding-content div img {
+  width: 17.5rem;
+  height: 12.5rem; }
+
+.binding-content p {
+  text-align: center; }
+
+.binding-content .tit {
+  padding-bottom: 1.25rem;
+  font-size: 1.5rem;
+  color: #FF6836; }
+
+.binding-content .desc {
+  font-size: 0.9375rem;
+  color: #0E050A; }
+
+/*2018-12-02 结束*/
+
+/*# sourceMappingURL=style.css.map */

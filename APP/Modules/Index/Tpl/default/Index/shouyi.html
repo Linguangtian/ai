@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<!-- saved from url=(0035)http://web.ykbnn.cn/ggz/income.aspx -->
+<html style="font-size: 111.467px;"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+		<title>我的收益</title>
+            <script src="/Public/hh/jquery-1.11.2.min.js"></script>
+		<script src="/Public/hh/mui.min.js"></script>
+		<script src="/Public/hh/rem.js"></script>
+		<link href="/Public/hh/mui.min.css" rel="stylesheet">
+		<link href="/Public/hh/style.css" rel="stylesheet">
+		<script type="text/javascript" charset="utf-8">
+			mui.init();
+		</script>
+		<style type="text/css">
+			.income-sum{
+				margin: 0.01rem 0 0 0;
+				  background: url(/images/juxin.png)no-repeat;
+             background-size: 100% 100%;
+                  -moz-background-size: 100% 100%;
+                 -webkit-background-size: 100% 100%;
+				padding: 0.15rem 0.2rem;
+				display: block;
+				overflow: hidden;
+				clear: both;
+			}
+
+
+			.income-sum p{
+				margin: 0;
+				font-size: 0.18rem;
+				color: #000;
+			}
+		        .income-sum p  strong{
+                    color:red;
+		        }
+			.income-sum span.icon{
+				float: left;
+				margin: 0.14rem 0 0;
+				width: 0.32rem;
+				height: 0.32rem;
+				background: url(/images/ic_home_zoushi.png) no-repeat;
+				background-size: 100% 100%;
+			}
+            .income-sum span.icont{
+				float: left;
+				margin: 0.14rem 0 0;
+				width: 0.32rem;
+				height: 0.32rem;
+				background: url(/images/ic_mine_huoban.png) no-repeat;
+				background-size: 100% 100%;
+			}
+			.income-sum .txt,.income-sum .txt2{
+				float: right;
+				width: 2.6rem;
+				line-height: 0.30rem;
+			}
+			.income-sum .txt a{
+				float: right;
+				color: #fff;
+				background: #117ffc;
+				font-size: 0.12rem;
+				line-height: 0.24rem;
+				padding: 0 0.15rem;
+				border-radius: 0.24rem;
+				margin: 0.16rem 0 0 0;
+			}
+            .income-sum .txt2 a{
+				float: right;
+				color: black;
+				
+				font-size: 0.12rem;
+				line-height: 0.24rem;
+				padding: 0 0.15rem;
+				margin: 0.16rem 0 0 0;
+			}
+
+			.income-sum .txt p.spa,.income-sum .txt2 p.spa{
+				font-size: 0.13rem;
+			}
+			.income-sum .txt p.spa strong，.income-sum .txt2 p.spa strong{
+				font-size: 0.18rem;
+				font-weight: bold;
+			}
+			.incomelist{
+				display: block;
+				overflow: hidden;
+				clear: both;
+				margin: 0.01rem 0 0 0;
+				/*background: #fff;*/
+				padding: 0;
+			}
+			.incomelist li{
+				padding: 0.15rem;
+				float: left;
+				width: 50%;
+				list-style: none;
+				/*border-bottom: 1px solid #f0f0f0;
+				border-right: 1px solid #f0f0f0;*/
+                           background: url(/images/juxin.png) no-repeat;
+
+background-size: 100% 100%;
+-moz-background-size: 100% 100%;
+-webkit-background-size: 100% 100%;
+			}
+			.incomelist li:nth-child(2),.incomelist li:nth-child(4){
+				border-right: none;
+			}
+			.incomelist li p{
+				margin: 0;
+				font-size: 0.14rem;
+				color: #000;
+				line-height: 0.26rem;
+			}
+			.incomelist li p.spa{
+				color: #888;
+                font-size: 0.10rem;
+			}
+			.incomelist li p strong{
+				font-weight: bold;
+                color:red;
+			}
+			.incomelist li:first-child p.spa strong,.incomelist li:nth-child(2) p.spa strong{
+				color: #d49432;
+			}
+			.incomelist li span{
+				margin: 0.08rem 0.11rem 0 0;
+				float: left;
+				width: 0.3rem;
+				height: 0.3rem;
+				background: url(/images/shuadanshouyi.png) no-repeat;
+				background-size: 100% 100%;
+			}
+			.incomelist li span.icon2{
+				background: url(/images/tuiguanshouyi.png) no-repeat;
+				background-size: 100% 100%;
+			}
+			.incomelist li span.icon3{
+				background: url(/images/shuadanjilu.png) no-repeat;
+				background-size: 100% 100%;
+			}
+			.incomelist li span.icon4{
+				background: url(/images/xiaxian.png) no-repeat;
+				background-size: 100% 100%;
+			}
+             .submit {
+            margin: 0.35rem auto 0;
+            display: block;
+            color: #1172ff;
+            border: 1px solid #1172ff;
+            width: 2.2rem;
+            padding: 0.1rem 0;
+            font-size: 0.14rem;
+            border-radius: 0.3rem;
+            text-align: center;
+            background: #fff;
+        }
+		</style>
+	</head>
+
+	<body class="loginbg graybg mui-android mui-android-6 mui-android-6-0">
+		<form method="post" action="http://web.ykbnn.cn/ggz/income.aspx" id="form1">
+<div class="aspNetHidden">
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUIODE2MDQyMTZkZFgyNo7VicjiWoiepLYiIm0CfS7TmiCtdv+4SkoNCpLz">
+</div>
+
+<div class="aspNetHidden">
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="E7951683">
+</div>
+		<header id="head" class="mui-bar mui-bar-nav">
+            <a class="mui-action-back mui-icon mui-icon-arrowleft colorfont"></a>
+			<h1 class="mui-title">我的收益</h1>
+		</header>
+		<div class="mui-content main">
+			 <div class="income-sum">
+				  <span class="icon"></span>
+					<div class="txt">
+						<a href="{:U('Index/wallet/yuelog')}">收益明细</a>
+						<p>总收益</p>
+						<p class="spa">￥<strong>{$sum}</strong></p>
+					</div>
+			 </div>
+               <div class="income-sum">
+				  <span class="icont"></span>
+					<div class="txt2">
+						<a href="http://web.ykbnn.cn/ggz/income.aspx#"><strong style="color:#d49432;">0</strong>个机器</a>
+						<p>我的直推</p>
+						<p class="spa"><strong>1</strong>人</p>
+					</div>
+			 </div>
+			 
+			 <ul class="incomelist">
+				  <li>
+						<a href="http://web.ykbnn.cn/ggz/incomedetail.aspx?id=2">
+							<span class="icon1"></span>
+							<div class="txt">
+								<p>广告收益</p>
+								<p class="spa">￥<strong>0</strong>笔<strong>0</strong></p>
+							</div>
+						</a>
+					</li>
+					<li>
+						<a href="http://web.ykbnn.cn/ggz/incomedetail.aspx?id=3">
+							<span class="icon2"></span>
+							<div class="txt">
+								<p>推广收益</p>
+								<p class="spa">￥<strong>0</strong></p>
+							</div>
+						</a>
+					</li>
+			 </ul>
+                <a href="http://web.ykbnn.cn/ggz/income.aspx#" id="bthApply" class="submit">我要申请经销商</a>
+        <br>
+        <br>
+        <br>
+        <p style="text-align: center;">
+            <strong>&nbsp;&nbsp;&nbsp;&nbsp;
+                说明：</strong>直接推荐10个有效账户，团队机器人达500个以上
+
+        </p>
+		</div>
+	    </form>
+        <script>
+            $('#bthApply').click(function () {
+                $.ajax({
+                    url: '/tools/submit_ajax.ashx?action=user_Applyr',
+                    data: {
+                    },
+                    type: "POST",
+                    dataType: 'json',
+                    success: function (result) {
+                        if (result.status == 0) {
+                            mui.toast(result.msg)
+                        } else {
+                            mui.toast(result.msg);
+                        }
+
+                    },
+                    fail: function (err) {
+                        mui.toast("申请失败")
+                    }
+                })
+            });
+        </script>
+	
+
+</body></html>
