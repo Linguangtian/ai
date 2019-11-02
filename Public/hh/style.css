@@ -1,0 +1,283 @@
+.loginbg{background: #fff;color: #333;}
+.loginbg .mui-icon-arrowthinleft:before{
+	color:#fff;
+	font-weight: bold;
+}
+.loginbg .mui-bar-nav{
+	box-shadow: none;
+	background:#054177;
+	color: #fff;
+}
+.mui-title{
+	color: #fff;
+}
+.mui-content{
+	background: none;
+}
+.loginbg  .mui-segmented-control{
+	margin: 0.4rem 0 0 0;
+	border: none;
+	border-radius: 0;
+	background: none;
+	font-size: 0.16rem;
+	color: #000;
+}
+.nnnnn {
+    	padding: 0 0.4rem;
+    position: fixed;
+    z-index: 99;
+}
+.loginbg  .mui-segmented-control .mui-control-item{
+	color: #666666;
+	line-height: 0.36rem;
+	border: none;
+}
+.loginbg  .mui-segmented-control .mui-control-item.mui-active{
+	color: #333;
+	background: none;
+}
+.loginbg  .mui-segmented-control .mui-control-item.mui-active span{
+	display: inline-block;
+	border-bottom: 2px solid #127efc;
+	padding: 0 0.08rem;
+}
+.loginContent{
+	margin: 0.3rem 0.4rem 0;
+	display: block;
+	overflow: hidden;
+	clear: both;
+	background: #fff;
+	padding: 0 0.15rem
+}
+.loginContent  .loginForm{
+    padding: 0;
+    border: 0;
+    background-color: #fff;
+}
+.loginContent  .loginForm .txt{
+	padding: 0.1rem 0 0 0;	
+	display: block;
+	overflow: hidden;
+	clear: both;
+	position: relative;
+}
+.loginContent  .loginForm .txt .phoneicon{
+	width: 0.12rem;
+	height: 0.28rem;
+	float: left;
+	background: url(../images/ic_register_phone.png) center center no-repeat;
+	background-size: 0.12rem auto;
+}
+.loginContent  .loginForm .txt  .passwordicon{
+	width: 0.15rem;
+	height: 0.28rem;
+	float: left;
+	background: url(../images/ic_login_psw.png) left center no-repeat;
+	background-size: 0.15rem auto;
+}
+.loginContent  .loginForm .txt .iconCode{
+	width: 0.15rem;
+	height: 0.28rem;
+	float: left;
+	background: url(../images/ic_register_code.png) left center no-repeat;
+	background-size: 0.15rem auto;
+}
+.loginContent  .loginForm  .phoneText{
+	border: none;
+	width: 2.40rem;
+	height: 0.28rem;
+	line-height: 0.28rem;
+	padding: 0 0 0 0.08rem;
+	margin-bottom: 0.1rem;
+	color: #999;
+	font-size: 0.14rem;
+}
+.loginContent  .loginForm .urse-txt{
+	width: 100%;
+}
+
+.loginContent  .loginForm .hasborder{
+	border-bottom: 1px solid #eeeeee;
+}
+.loginbtn{
+ margin: 0.35rem auto 0;
+            display: block;
+            color: #054177;
+            border: 1px solid #054177;
+            width: 2.2rem;
+            padding: 0.1rem 0;
+            font-size: 0.14rem;
+            border-radius: 0.3rem;
+            text-align: center;
+            background: #fff;
+}
+.loginbtn:disabled{
+	background: #cccccc;
+	cursor: not-allowed;
+}
+.yanzhenbtn{
+	float:right;
+	border: none;
+	font-size:0.12rem;
+	height:0.26rem;
+	line-height:0.24rem;
+	padding:0 0.12rem;
+	background: #0f0b3a;
+	color: #fff;
+	border-radius: 0.15rem;
+}
+.fogetText_right{
+	/* float:right; */
+	text-align: center;
+	margin-top: 0.3125rem;
+	
+	font-size: 0.12rem;
+	padding-top: 0.08rem;
+	line-height: 0.20rem;
+}
+.fogetText_left{
+	/* float:left; */
+	text-align: center;
+	margin-top: 0.3125rem;
+	font-size: 0.12rem;
+	padding-top: 0.08rem;
+	line-height: 0.20rem;
+}
+
+.loginContent  .loginForm .yanztxt {
+	line-height:0.28rem;
+	width: 1.2rem;
+}
+.loginContent  .loginForm .yanztxt .mininfo{
+	color:#333333;
+	font-size:0.14rem;
+}
+.graybg{
+	background: #054177;
+}
+.colorfont{color:#fff}
+.settingList{
+	margin:0;
+}
+.footer{
+	position: fixed;
+	left: 50%;
+	bottom: 0;
+	max-width: 750px;
+	height: 0.60rem;
+	background: #054177;
+	width:100%;
+	-wekit-transform: translateX(-50%);
+	transform: translateX(-50%);
+}
+.footerlist{
+	margin: 0;
+	padding:0;
+	display: block;
+	overflow: hidden;
+	clear: both;
+}
+.footerlist li{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	float: left;
+	width: 33.333%;
+	text-align: center;
+}
+.footerlist li a{
+	line-height: 0.22rem;
+	display: block;
+	color: #E9E9E9;
+	font-size: 0.15rem;
+}
+.footerlist li a span{
+	display: block;
+	width: 100%;
+	height: 0.24rem;
+	margin: 0.05rem auto 0.04rem;
+}
+
+.footerlist li.hover a{
+	color: #54E2E3;
+}
+.footerlist li a span.icon1{
+	background: url(../images/ic_home_nor.png) center top no-repeat;
+	background-size: auto 0.24rem;
+}
+.footerlist li a span.icon2{
+	background: url(../images/ic_robot_nor.png) center top no-repeat;
+	background-size: auto 0.24rem;
+}
+.footerlist li a span.icon3{
+	background: url(../images/ic_mine_nor.png) center top no-repeat;
+	background-size: auto 0.24rem;
+}
+.footerlist li.hover a span.icon1{
+	background: url(../images/ic_home_press.png) center top no-repeat;
+	background-size: auto 0.24rem;
+}
+.footerlist li.hover a span.icon2{
+	background: url(../images/ic_robot_press.png) center top no-repeat;
+	background-size: auto 0.24rem;
+}
+.footerlist li.hover a span.icon3{
+	background: url(../images/ic_mine_press.png) center top no-repeat;
+	background-size: auto 0.24rem;
+}
+.main{
+	padding-bottom: 0.76rem;
+}
+.notices{
+	margin: 8px 0 0 0;
+	padding: 0.1rem 0 0.06rem;
+}
+.notices-title{
+	display: block;
+	overflow: hidden;
+	clear: both;
+	padding: 0 0.2rem;
+	line-height: 0.22rem;
+	font-size: 0.12rem;
+	color: #EEEEEC;
+}
+.notices-title span.icon{
+	float: left;
+	margin-right: 0.1rem;
+	background: url(../images/ic_home_notice.png) left center no-repeat;
+	width: 0.22rem;
+	height: 0.22rem;
+	background-size: 100% auto;
+}
+.noticeslist{
+	margin: 0;
+	display: block;
+	overflow: hidden;
+	font-size: 0.13rem;
+	height: 0.36rem;
+	line-height: 0.36rem;
+}
+.noticeslist li{
+	 list-style: none;
+	 font-size: 0.12rem;
+	 color: #EEEEEC;
+	 padding-left: 0.14rem;
+}
+.layout{
+	position: fixed;
+	left: 50%;
+	top: 50%;
+	width: 3rem;
+	background: #fff;
+	-webkit-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+	z-index: 1000;
+}
+
+.mui-toast-container {
+    bottom: 50% !important;
+}
+
+
+
+

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+	<meta charset="UTF-8" />
+	<title>余额</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-touch-fullscreen" content="yes">
+	<meta http-equiv="Access-Control-Allow-Origin" content="*">
+	<link rel="stylesheet" href="/Public/wx/wx/css/reset.css" />
+	<link rel="stylesheet" href="/Public/wx/wx/css/animate.css" />
+	<link rel="stylesheet" href="/Public/wx/wx/css/swiper-3.4.1.min.css" />
+	<link rel="stylesheet" href="/Public/wx/wx/css/layout.css" />
+	
+	<script src="/Public/wx/wx/js/jquery-1.9.1.min.js"></script>
+	<script src="/Public/wx/wx/js/zepto.min.js"></script>
+	<script src="/Public/wx/wx/js/fontSize.js"></script>
+	<script src="/Public/wx/wx/js/swiper-3.4.1.min.js"></script>
+	<script src="/Public/wx/wx/js/wcPop/wcPop.js"></script>
+	<script src="/Public/wx/wx/js/wcKeyBoard.js"></script>
+	
+</head>
+<body>
+	
+	<!-- <>微聊主容器 -->
+	<div class="wechat__panel clearfix">
+		<div class="wc__home-wrapper flexbox flex__direction-column">
+			<!-- //顶部 -->
+			<div class="wc__headerBar fixed">
+				<div class="inner flexbox wc__theme01">
+					<a class="back" href="javascript:;" onclick="history.back(-1);"></a>
+					<h2 class="barTit flex1">余额</h2>
+					<a class="barTxt" href="{:U('Index/wallet/yuelog')}">余额明细</a>
+				</div>
+			</div>
+
+			<!-- //我的钱包页面 -->
+			<div class="wc__ucinfoPanel">
+				<!-- 零钱 -->
+				<div class="wc__wallet-lingqian">
+					<img class="icon" src="/Public/wx/wx/img/wallet/icon__wallet-lingqian2.png" />
+					<p>我的余额</p>
+					<p class="num">￥{$minfo.money}</p>
+					<div class="wc__btns-panel">
+						<a class="wc__btn-primary" href="{:U('Index/wallet/onlinerecharge')}">在线充值</a>
+						<a class="wc__btn-default mt20" href="{:U('Index/wallet/withdrawn')}" id="J__wcDeposit">提现</a>
+					</div>
+				</div>
+			</div>
+			
+			<!-- <div id="#" style="color: #005580;font-size: 0.325rem;text-align: center">
+				<a class="barTxt" href="{:U('Index/wallet/yuelog')}">余额明细>></a>
+			</div> -->
+			<!-- <div id="#" >
+				<a class="barTxt" href="{:U('Index/index/index')}" style="margin:0.35rem auto 0;display: block;color: #1172ff;border: 1px solid #1172ff;width: 3.5rem;height: 0.8rem;padding: 0.1rem 0;font-size: 0.425rem;border-radius: 0.3rem;text-align: -webkit-center;background: #fff;">返回首页</a>
+				<input type="button" id="submit" class="btn_submit_my" style="margin: 0.35rem auto 0;display: block;color: #1172ff;border: 1px solid #1172ff;width: 21rem;height: 2.5rem;padding: 0.1rem 0;font-size: 1rem;border-radius: 0.3rem;text-align: center;background: #fff;" value="注&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;册">
+			</div> -->
+			
+
+		</div>
+	</div>
+
+<script>
+//子页返回逻辑
+   document.addEventListener('plusready', function() {
+    var webview = plus.webview.currentWebview();
+    plus.key.addEventListener('backbutton', function() {
+        webview.canBack(function(e) {
+            if(e.canBack) {
+                webview.back();
+            } else {
+                webview.close(); //hide,quit
+                //plus.runtime.quit();
+            }
+        })
+    });
+});
+</script>
+
+	
+
+
+	
+</body>
+</html>

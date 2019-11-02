@@ -1,0 +1,84 @@
+﻿
+<script type="text/javascript">ctx = ''</script>
+<script type="text/javascript">staticCtx = ''</script>
+<script type="text/javascript">fileCtx = 'http://file.yidianbuy.cn'</script><!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="author" content="">
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <meta name="robots" content="all" />
+    <link rel="shortcut icon" href="favicon.ico">
+    <title>AI智能机器人</title>
+    <link type="text/css" rel="stylesheet" href="style/style.css">
+    <script type="text/javascript" src="style/jquery-1.11.2.min.js"></script>
+    <script type="text/javascript" src="style/public.js"></script>
+    <script type="text/javascript" src="style/base.js"></script>
+    <style type="text/css">
+        a{
+            text-decoration: none;
+        }
+        img.weixin-img{
+            max-width: 100%;
+            height: auto;
+        }
+        .weixin-tip{
+            display: none;
+            position: fixed;
+            left:0;
+            top:0;
+            bottom:0;
+            background: rgba(0,0,0,0.8);
+            filter:alpha(opacity=80);
+            height: 100%;
+            width: 100%;
+            z-index: 100;
+        }
+        .weixin-tip p{
+            text-align: center;
+            margin-top: 10%;
+            padding:0 5%;
+        }
+    </style>
+</head>
+<body class="bg-fff">
+<div class="download-content">
+    <div><img src="style/register_logo1.png" /></div>
+    <button class="save" onclick="andriod()" formType="submit">安卓版</button>
+    <button class="save" onclick="ios()" formType="submit">苹果版</button>
+</div>
+<div class="weixin-tip">
+    <p>
+        <img class="weixin-img" src="style/dl_tip.png" alt="微信打开"/>
+    </p>
+</div>
+<script>
+    $(window).on("load",function(){
+        var winHeight = $(window).height();
+        function is_weixin() {
+            var ua = navigator.userAgent.toLowerCase();
+            if (ua.match(/MicroMessenger/i) == "micromessenger") {
+                return true;
+            } else {
+                return false;
+            }
+        }
+        var isWeixin = is_weixin();
+        if(isWeixin){
+            $(".weixin-tip").css("height",winHeight);
+            $(".weixin-tip").show();
+        }
+    })
+    function ios() {
+        location = "https://zz131.com/279";
+    }
+    function andriod() {
+        location = "https://zz131.com/293";
+    }
+</script>
+</body>
+</html>
+
