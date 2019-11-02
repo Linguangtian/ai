@@ -143,16 +143,18 @@
 			$username = session('username');
 
             $minfo = M('member')->where(array('username'=>$username))->find();
-			$list = $member->where(array('parent'=>$username))->field('username,id,money,truename')->select();
-
+            //成员的业绩=总花销=团队花销=total_cost   计算统计的时间update_cost
+			$list = $member->where(array('parent'=>$username))->field('username,id,money,truename,(total_cost+cost_money) as costt ,update_cost')->select();
 			foreach($list as $key=>&$v){
                 $sql='select sum(adds) as royalty_one  from ds_jinbidetail where member='.$username.' and type=3 and tgaward='.$v['username'];
-
                 $res=$db->query($sql);
                 $royalty_one=$res['0']['royalty_one'];
                 $v['royalty_one']=$royalty_one>0?$royalty_one:0;
+                $v['update_cost']=date('Y-m-d H:i:s',$v['update_cost']);
 
-                $son=$member -> where(array('parent' => $v['username'])) ->field('username,id,money,truename') -> select();
+
+                $son= M('member') -> where(array('parent' => $v['username'])) ->field('username,id,money,truename') -> select();
+
                 foreach ($son as &$li){
                     $sql='select sum(adds) as royalty_one  from ds_jinbidetail where member='.$username.' and type=3  and tgaward='.$li['username'];
                     $res=$db->query($sql);
@@ -174,20 +176,22 @@
 
             }
 
-            $tuandui='';
+          /*  $tuandui='';
             if($minfo['parentcount']>=direct_line){
                 if($minfo['total_cost']>=team_cost){
                     $tuandui='团队总消费已超过：'.team_cost.'元';
-                }else{
+                }else{*/
                     $tuandui='团队总消费：'.$minfo['total_cost'].'元';
-                }
+          /*      }
 
-            }
+            }*/
 
             $this->assign('minfo',$minfo);
             $this->assign('tuandui',$tuandui);
 
 			$this->assign('list',$list);
+
+
 			$this->assign('jinbilog',$jinbi_log);
 			$this->assign('isteam',$is_team);
 

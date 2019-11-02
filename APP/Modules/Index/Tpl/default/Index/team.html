@@ -38,6 +38,13 @@
 		function direction() { if (window.orientation == 90 || window.orientation == -90) { adaPtive(320); return false; } else if (window.orientation == 0 || window.orientation == 180) { adaPtive(); return false; } }
 	</script>
 </head>
+<style>
+	.inform-list ul li{width: 25%}
+	.Putflist li span {
+		font-size: 0.25rem;
+	}
+</style>
+
 <body ontouchstart>
 <div class="wx-header clearfix flex">
 	<div class="wx-header-left">
@@ -57,6 +64,7 @@
 					<li class="acti">一代会员</li>
 					<li>二代会员</li>
 					<li>团队记录</li>
+					<li>团队业绩</li>
 				</ul>
 			</div>
 			<div class="inform-text show">
@@ -93,13 +101,13 @@
 					</ul>
 				</div>
 			</div>
+
+
+
 			<div class="inform-text">
 				<div class="recordbox">
 				<div style="text-align:center;font-size: 0.3rem;margin-top: 0.5rem;margin-bottom: 0.5rem;" >
 					<li><span>当前直推人数 : </span><span>{$minfo.parentcount}</span> {$tuandui} </li>
-
-
-
 					<div class="recordTop">
 						<span>日期</span>
 						<span>来自</span>
@@ -109,12 +117,34 @@
 					</div>
 					<ul class="Putflist">
 					<volist  name="jinbilog" id="vo">
-						<li><span>{$vo.time}</span><span>{$vo.tgaward}</span><span>{$vo.adds}元</span><span>团队奖/span></li>
+						<li><span>{$vo.time}</span><span>{$vo.tgaward}</span><span>{$vo.adds}元</span><span>团队奖</span></li>
 					</volist >
 					</ul>
 				</div>
 				</div>
 			</div>
+
+
+			<div class="inform-text">
+				<div class="recordbox">
+				<div style="text-align:center;font-size: 0.3rem;margin-top: 0.5rem;margin-bottom: 0.5rem;" >
+					<li> 团队总业绩:{$minfo['total_cost']} </li>
+					<div class="recordTop">
+						<span  style="width: 10%">ID</span>
+						<span>电话</span>
+						<span>金额</span>
+						<span style="width: 35%">截止时间</span>
+					</div>
+					<ul class="Putflist">
+					<volist  name="list" id="vo">
+						<li><span style="width: 10%">{$vo.id}</span><span>{$vo.username}</span><span>{$vo.costt}</span><span style="width: 35%">{$vo.update_cost}</span></li>
+					</volist >
+					</ul>
+				</div>
+				</div>
+			</div>
+
+
 		</div>
 	</main>
 

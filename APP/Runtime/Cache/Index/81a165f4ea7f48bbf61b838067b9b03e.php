@@ -38,6 +38,13 @@
 		function direction() { if (window.orientation == 90 || window.orientation == -90) { adaPtive(320); return false; } else if (window.orientation == 0 || window.orientation == 180) { adaPtive(); return false; } }
 	</script>
 </head>
+<style>
+	.inform-list ul li{width: 25%}
+	.Putflist li span {
+		font-size: 0.25rem;
+	}
+</style>
+
 <body ontouchstart>
 <div class="wx-header clearfix flex">
 	<div class="wx-header-left">
@@ -57,6 +64,7 @@
 					<li class="acti">一代会员</li>
 					<li>二代会员</li>
 					<li>团队记录</li>
+					<li>团队业绩</li>
 				</ul>
 			</div>
 			<div class="inform-text show">
@@ -87,13 +95,13 @@
 					</ul>
 				</div>
 			</div>
+
+
+
 			<div class="inform-text">
 				<div class="recordbox">
 				<div style="text-align:center;font-size: 0.3rem;margin-top: 0.5rem;margin-bottom: 0.5rem;" >
 					<li><span>当前直推人数 : </span><span><?php echo ($minfo["parentcount"]); ?></span> <?php echo ($tuandui); ?> </li>
-
-
-
 					<div class="recordTop">
 						<span>日期</span>
 						<span>来自</span>
@@ -102,11 +110,31 @@
 
 					</div>
 					<ul class="Putflist">
-					<?php if(is_array($jinbilog)): $i = 0; $__LIST__ = $jinbilog;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><li><span><?php echo ($vo["time"]); ?></span><span><?php echo ($vo["tgaward"]); ?></span><span><?php echo ($vo["adds"]); ?>元</span><span>团队奖/span></li><?php endforeach; endif; else: echo "" ;endif; ?>
+					<?php if(is_array($jinbilog)): $i = 0; $__LIST__ = $jinbilog;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><li><span><?php echo ($vo["time"]); ?></span><span><?php echo ($vo["tgaward"]); ?></span><span><?php echo ($vo["adds"]); ?>元</span><span>团队奖</span></li><?php endforeach; endif; else: echo "" ;endif; ?>
 					</ul>
 				</div>
 				</div>
 			</div>
+
+
+			<div class="inform-text">
+				<div class="recordbox">
+				<div style="text-align:center;font-size: 0.3rem;margin-top: 0.5rem;margin-bottom: 0.5rem;" >
+					<li> 团队总业绩:<?php echo ($minfo['total_cost']); ?> </li>
+					<div class="recordTop">
+						<span  style="width: 10%">ID</span>
+						<span>电话</span>
+						<span>金额</span>
+						<span style="width: 35%">截止时间</span>
+					</div>
+					<ul class="Putflist">
+					<?php if(is_array($list)): $i = 0; $__LIST__ = $list;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><li><span style="width: 10%"><?php echo ($vo["id"]); ?></span><span><?php echo ($vo["username"]); ?></span><span><?php echo ($vo["costt"]); ?></span><span style="width: 35%"><?php echo ($vo["update_cost"]); ?></span></li><?php endforeach; endif; else: echo "" ;endif; ?>
+					</ul>
+				</div>
+				</div>
+			</div>
+
+
 		</div>
 	</main>
 
