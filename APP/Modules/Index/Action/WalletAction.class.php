@@ -196,6 +196,10 @@
 			$page->setConfig('theme', '%first% %upPage% %linkPage% %downPage% %end%');
 			$show = $page->show();// 分页显示输出
 			$list = $data->where($map)->order('id desc')->limit($page->firstRow.','.$page->listRows)->select();
+			foreach ($list as &$li){
+                $li['adds']=round($li['adds'],2);
+            }
+
 			$money = M('member')->where(array('username'=>session('username')))->getField('money');
 			$this->assign('money',$money);
 			$this->assign('list',$list);
