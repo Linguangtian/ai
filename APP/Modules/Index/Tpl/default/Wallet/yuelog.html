@@ -103,7 +103,7 @@
 
 
     <div class="data-juan-list">
-        <foreach name="list" item="v">
+  `     <foreach name="list" item="v">
             <a class="item-name">
                 <div class="coml wow slideInRight">
                     <span>{$v.addtime|date='Y-m-d',###}</span>
@@ -111,6 +111,18 @@
                 </div>
                 <div class="comr">
                     <span class="wow slideInLeft">￥<if condition="$v.adds eq 0.00">-{$v.reduce|four_number=###}<else/>+{$v.adds|four_number=###}</if></span>
+                </div>
+            </a>
+        </foreach>
+
+        <foreach name="pay_list" item="v">
+            <a class="item-name">
+                <div class="coml wow slideInRight">
+                    <span>{$v.pay_time|date='Y-m-d',###}</span>
+                    <dl>{$v.pay_no}</dl>
+                </div>
+                <div class="comr">
+                    <span class="wow slideInLeft">￥+{$v.money|four_number=###}</span>
                 </div>
             </a>
         </foreach>

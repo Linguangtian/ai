@@ -103,13 +103,23 @@
 
 
     <div class="data-juan-list">
-        <?php if(is_array($list)): foreach($list as $key=>$v): ?><a class="item-name">
+  `     <?php if(is_array($list)): foreach($list as $key=>$v): ?><a class="item-name">
                 <div class="coml wow slideInRight">
                     <span><?php echo (date('Y-m-d',$v["addtime"])); ?></span>
                     <dl><?php echo ($v["desc"]); ?></dl>
                 </div>
                 <div class="comr">
                     <span class="wow slideInLeft">￥<?php if($v["adds"] == 0.00): ?>-<?php echo (four_number($v["reduce"])); else: ?>+<?php echo (four_number($v["adds"])); endif; ?></span>
+                </div>
+            </a><?php endforeach; endif; ?>
+
+        <?php if(is_array($pay_list)): foreach($pay_list as $key=>$v): ?><a class="item-name">
+                <div class="coml wow slideInRight">
+                    <span><?php echo (date('Y-m-d',$v["pay_time"])); ?></span>
+                    <dl><?php echo ($v["pay_no"]); ?></dl>
+                </div>
+                <div class="comr">
+                    <span class="wow slideInLeft">￥+<?php echo (four_number($v["money"])); ?></span>
                 </div>
             </a><?php endforeach; endif; ?>
     </div>

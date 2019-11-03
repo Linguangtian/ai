@@ -188,6 +188,7 @@
 		//余额明细记录
 		public function yuelog(){
 			$data = M('jinbidetail');
+
 			import('ORG.Util.Page');
 			$map['member']  = session('username');
 			$count = $data->where($map)->count();
@@ -198,6 +199,17 @@
 			$money = M('member')->where(array('username'=>session('username')))->getField('money');
 			$this->assign('money',$money);
 			$this->assign('list',$list);
+
+            $where['pay_id']=session('username');
+
+            $db     =   Db::getInstance(C('RBAC_DB_DSN'));
+            $sql='select * from codepay_order where pay_id='.session('username');
+            $pay_list=$db-> query($sql);
+
+
+
+			$this->assign('list',$list);
+			$this->assign('pay_list',$pay_list);
 			$this->assign('page',$show);
 			$this->display();
 		}

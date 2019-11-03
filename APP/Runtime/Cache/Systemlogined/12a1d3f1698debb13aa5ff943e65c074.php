@@ -47,7 +47,7 @@
 					<a href="#" class="brand">
 						<small>
 							<i class="icon-leaf"></i>
-							机器人管理系统 随便撸源码www.suibianlu.com出品
+
 						</small>
 					</a><!--/.brand-->
 
