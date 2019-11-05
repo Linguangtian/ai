@@ -87,6 +87,12 @@ class JinbidetailAction extends CommonAction {
 
 
 		$list = $Data->where($map)->order('id desc')->limit($Page ->firstRow.','.$Page -> listRows)->select();
+
+        foreach ($list as &$li ){
+            $truename= M('member') -> where(array('username' => $li['username'])) ->field('truename')->find();
+            $li['truename']=$truename['truename'];
+        }
+
 		$show       = $Page->show();// 分页显示输出
 		$this->assign('page',$show);// 赋值分页输出
 		$this->assign('list',$list);// 赋值数据集

@@ -47,7 +47,7 @@
 					<a href="#" class="brand">
 						<small>
 							<i class="icon-leaf"></i>
-							机器人管理系统 随便撸源码www.suibianlu.com出品
+
 						</small>
 					</a><!--/.brand-->
 
@@ -404,6 +404,7 @@ a.active{ color:#C30 !important; font-size:18px;}
 									<tr>
 										<th class="center">ID</th>
 										<th>会员编号</th>
+										<th>姓名</th>
 										<th>提现金额</th>
 										<th>手续费</th>
 										<th>实发金额</th>
@@ -418,6 +419,7 @@ a.active{ color:#C30 !important; font-size:18px;}
 									<?php if(is_array($list)): foreach($list as $key=>$v): ?><tr>
 											<td><?php echo ($v["id"]); ?></td>
 											<td><?php echo ($v["username"]); ?></td>
+											<td><?php echo ($v["truename"]); ?></td>
 											<td><?php echo ($v["amount"]); ?></td>
 											<td><?php echo ($v["charge"]); ?></td>
 											<td><?php echo ($v["payment"]); ?></td>

@@ -315,18 +315,18 @@ function account_log4($member,$money,$desc,$jj,$type=0,$status=1){
      function sms_code_verify($mobile,$code,$session_id){
          if($code != 6666){
         //判断是否存在验证码
-        //$data = M('sms_log')->where(array('mobile'=>$mobile,'session_id'=>$session_id,'code'=>$code))->order('id DESC')->find();
-       /// if(empty($data))
-          //sreturn array('status'=>-1,'msg'=>'手机验证码不匹配');
+        $data = M('sms_log')->where(array('mobile'=>$mobile,'session_id'=>$session_id,'code'=>$code))->order('id DESC')->find();
+        if(empty($data))
+          return array('status'=>-1,'msg'=>'手机验证码不匹配');
 
         //获取时间配置
         $sms_time_out = C('CODE_GQ');
         //验证是否过时
-       // if((time() - $data['add_time']) > $sms_time_out){
-		//	return array('status'=>-1,'msg'=>'手机验证码超时'); //超时处理
-		//}
+        if((time() - $data['add_time']) > $sms_time_out){
+		return array('status'=>-1,'msg'=>'手机验证码超时'); //超时处理
+	    }
          }
-        //M('sms_log')->where(array('mobile'=>$mobile,'session_id'=>$session_id,'code'=>$code))->delete();
+        M('sms_log')->where(array('mobile'=>$mobile,'session_id'=>$session_id,'code'=>$code))->delete();
         return array('status'=>1,'msg'=>'验证成功');
     }
 
